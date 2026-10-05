@@ -1,0 +1,68 @@
+<po-page-edit
+  p-title="Novo Cliente"
+  [p-breadcrumb]="breadcrumb"
+  (p-save)="onSave()"
+  (p-save-new)="onSaveNew()"
+  (p-cancel)="onCancel()"
+>
+  <div class="po-row">
+    <po-input
+      class="po-md-6"
+      name="id"
+      p-label="Código"
+      p-placeholder="Gerado automaticamente"
+      [(ngModel)]="customer.id"
+      [p-disabled]="true"
+    >
+    </po-input>
+
+    <po-input
+      class="po-md-6"
+      name="name"
+      p-label="Nome"
+      p-placeholder="Nome completo do cliente"
+      p-required
+      p-min-length="3"
+      p-max-length="100"
+      p-clean
+      [(ngModel)]="customer.name"
+    >
+    </po-input>
+  </div>
+
+  <div class="po-row">
+    <po-email
+      class="po-md-6"
+      name="email"
+      p-label="E-mail"
+      p-placeholder="email@exemplo.com"
+      p-required
+      p-clean
+      [(ngModel)]="customer.email"
+    >
+    </po-email>
+
+    <po-input
+      class="po-md-6"
+      name="city"
+      p-label="Cidade"
+      p-placeholder="Cidade do cliente"
+      p-required
+      p-clean
+      [(ngModel)]="customer.city"
+    >
+    </po-input>
+  </div>
+
+  <div class="po-row">
+    <po-switch
+      class="po-md-6"
+      name="status"
+      p-label="Status"
+      p-label-on="Ativo"
+      p-label-off="Inativo"
+      [(ngModel)]="customer.status"
+    >
+    </po-switch>
+  </div>
+</po-page-edit>

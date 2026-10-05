@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
+import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/ng-components';
+import { RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, PoToolbarModule, PoMenuModule, PoPageModule, RouterModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
 })
 export class App {
-  protected readonly title = signal('universo-totvs-2026-mcp');
+  readonly menus: Array<PoMenuItem> = [{ label: 'Home', action: this.onClick.bind(this) }];
+
+  private onClick() {
+    alert('Clicked in menu item');
+  }
 }

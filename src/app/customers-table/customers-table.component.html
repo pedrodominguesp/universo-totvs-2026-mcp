@@ -1,0 +1,25 @@
+<po-page-default p-title="Clientes" [p-actions]="pageActions">
+  <po-table
+    #customersTable
+    [p-columns]="columns"
+    [p-service-api]="serviceApi"
+    [p-search-ai-field]="searchAiField"
+    [p-sort]="true"
+    [p-striped]="true"
+    [p-loading-show-more]="isLoadingMore"
+    [p-show-more-disabled]="showMoreDisabled"
+    [p-hide-table-search]="false"
+    [p-hide-columns-manager]="false"
+    [p-hide-batch-actions]="false"
+    [p-selectable]="true"
+    [p-auto-collapse]="true"
+    p-container="shadow"
+    p-spacing="medium"
+    (p-show-more)="onShowMore()"
+    (p-sort-by)="onSortBy($event)"
+    (p-search-ai-result)="onSearchAiResult($event)"
+    (p-search-ai-low-confidence)="onSearchAiLowConfidence($event)"
+    (p-search-ai-error)="onSearchAiError($event)"
+  >
+  </po-table>
+</po-page-default>
